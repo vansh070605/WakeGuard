@@ -1,7 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import { FaceMesh, FACEMESH_TESSELATION, FACEMESH_RIGHT_EYE, FACEMESH_LEFT_EYE } from "@mediapipe/face_mesh";
-import { Camera as MediapipeCamera } from "@mediapipe/camera_utils";
-import { drawConnectors } from "@mediapipe/drawing_utils";
 
 export default function Camera({ settings }) {
   const videoRef = useRef(null);
@@ -30,6 +27,16 @@ export default function Camera({ settings }) {
     const videoElement = videoRef.current;
     const canvasElement = canvasRef.current;
     const canvasCtx = canvasElement.getContext("2d");
+
+    const FaceMesh = window.FaceMesh;
+    const MediapipeCamera = window.Camera;
+    const { drawConnectors } = window;
+    const { FACEMESH_TESSELATION, FACEMESH_RIGHT_EYE, FACEMESH_LEFT_EYE } = window;
+
+    if (!FaceMesh) {
+      console.error("MediaPipe failed to load from CDN.");
+      return;
+    }
 
     const faceMesh = new FaceMesh({
       locateFile: (file) => {
