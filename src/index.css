@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased transition-colors duration-500;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    min-height: 100vh;
+  }
+  
+  .dark body {
+    background-color: #020617;
+    color: #f8fafc;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-3xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]
+           dark:bg-slate-900/40 dark:border-slate-800/60 dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)];
+  }
+  
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/80 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-0.5
+           dark:bg-slate-800/40 dark:border-slate-700/50 dark:shadow-[0_4px_20px_rgb(0,0,0,0.1)] transition-all duration-300;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, #f0f9ff, #e0f2fe, #f8fafc, #f1f5f9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.dark .gradient-bg {
+  background: linear-gradient(-45deg, #020617, #0f172a, #082f49, #020617);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.camera-frame {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5), 0 20px 40px -10px rgba(0,0,0,0.08);
+}
+.dark .camera-frame {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 20px 40px -10px rgba(0,0,0,0.4);
+}
