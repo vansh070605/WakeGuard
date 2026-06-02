@@ -24,7 +24,7 @@ Because WakeGuard runs entirely on the frontend, starting it locally is incredib
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/vansh070605/WakeGuard.git
    cd WakeGuard
    ```
 
