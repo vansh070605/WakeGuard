@@ -42,28 +42,6 @@ Because WakeGuard runs entirely on the frontend, starting it locally is incredib
 
 ---
 
-## 🌐 Deployment Instructions
-
-Because the Python backend was removed (as the AI models are run 100% locally in the browser via WebAssembly), WakeGuard is now a **Static Web Application**. 
-
-The easiest and fastest way to deploy this project for free is using **Vercel** or **Netlify**.
-
-### Deploying to Vercel (Recommended)
-1. Push your code to a GitHub repository.
-2. Create an account on [Vercel.com](https://vercel.com).
-3. Click **Add New -> Project** and import your GitHub repository.
-4. The Build Command (`npm run build`) and Output Directory (`dist`) will be automatically detected.
-5. Click **Deploy**! 
-
-### Deploying via Vercel CLI
-If you want to deploy straight from your terminal:
-```bash
-npx vercel
-```
-*Follow the prompts, log in, and let Vercel handle the rest!*
-
----
-
 ## ⚙️ How It Works (The Math)
 
 WakeGuard uses Euclidian distance to measure facial landmarks. 
