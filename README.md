@@ -1,8 +1,6 @@
 # 🛡️ WakeGuard Enterprise
 **Advanced AI Vision System for Driver Safety & Fatigue Tracking**
 
-![WakeGuard Interface Preview](https://i.imgur.com/your-image-url.png)
-
 WakeGuard is an extremely fast, client-side driver monitoring system built with **React, Vite, and Tailwind CSS**. It leverages **Google MediaPipe's Face Mesh** to track 478 3D facial landmarks in real-time, operating entirely inside the browser at 60 FPS.
 
 There are **zero backend dependencies**, zero server costs, and total data privacy since the video feed never leaves the user's device!
